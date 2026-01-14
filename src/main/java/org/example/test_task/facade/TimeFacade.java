@@ -20,7 +20,7 @@ public class TimeFacade {
     }
 
     public Page<TimeEntryDto> getPage(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.by("id").ascending());
+        Pageable pageable = PageRequest.of(page, size);
         return repository.findAll(pageable)
                 .map(mapper::toDto);
     }

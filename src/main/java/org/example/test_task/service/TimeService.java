@@ -105,7 +105,7 @@ public class TimeService {
                 } catch (Exception ex) {
                     log.error("Ошибка при сохранении: {}. Перекладываем в буфер", entry.getTime(), ex);
                     requeueBuffer(entry);
-                    sleepSilently(2000);
+                    sleepSilently(5000);
                 }
             }
         });
