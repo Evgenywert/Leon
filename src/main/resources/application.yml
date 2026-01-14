@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: test_task
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: postgres
+    password: 1111
+    hikari:
+      connection-timeout: 2000
+      maximum-pool-size: 10
+      minimum-idle: 1
+      validation-timeout: 1000
+      idle-timeout: 30000
+      max-lifetime: 60000
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    open-in-view: false
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog.xml
+  docker:
+    compose:
+      enabled: false
